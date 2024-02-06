@@ -5,7 +5,7 @@ num = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 # Main Function
 # Function for the answer ; var1 is the solving Entry (solving = Entry(app))
 def answer(var1):
-    if var1.get() == str():
+    if var1.get() == str(resultPLUS()):
         correct = tk.Label(app, text="Correct!", fg="green", font=("Courier", 14))
         correct.pack(padx=15, pady=15)
     else:
@@ -17,7 +17,11 @@ def try_again():
     try_again.num2update = random.choice(num)
     question = tk.Label(app, text=f"{try_again.num1update}+{try_again.num2update}", font=("Courier", 14))
     question.pack(padx=10, pady=10)
+# Another function to try again
+def resultPLUS():
+    try_again
 
+    return try_again.num1update + try_again.num2update
 
 # User Interface
 app = tk.Tk()

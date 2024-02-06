@@ -33,8 +33,8 @@ app.geometry("250x300")
 app.resizable(False, False)
 
 # Buttons and Textbox
-start = Button(app, text="Start", command=try_again)
-start.place(relx=0.45, rely=0.2)
+start = Button(app, text="Press to Start", command=try_again)
+start.place(relx=0.35, rely=0.2)
 
 solving = Entry(app)
 solving.place(relx=0.35, rely=0.4, relwidth=0.34, relheight=0.23)

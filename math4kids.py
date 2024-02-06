@@ -11,7 +11,13 @@ def answer(var1):
     else:
         wrong = tk.Label(app, text="Wrong!", fg="red", font=("Courier", 14))
         wrong.pack(padx=15, pady=15)
-answer()
+# Function to try again
+def try_again():
+    try_again.num1update = random.choice(num)
+    try_again.num2update = random.choice(num)
+    question = tk.Label(app, text=f"{try_again.num1update}+{try_again.num2update}", font=("Courier", 14))
+    question.pack(padx=10, pady=10)
+
 
 # User Interface
 app = tk.Tk()
@@ -20,7 +26,7 @@ app.title("Math4Kids")
 
 # Window
 app.geometry("400x400")
-app.resizable(False, False)
+app.resizable(True, True)
 
 # Label
 label = tk.Label(app, text="MATH4KIDS", font=("Time New Roman", 18))

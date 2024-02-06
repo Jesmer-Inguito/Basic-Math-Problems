@@ -10,6 +10,7 @@ def answer(var1):
         correct.pack(padx=15, pady=15)
     else:
         wrong = tk.Label(app, text="Wrong!", fg="red", font=("Courier", 14))
+        wrong.pack(padx=15, pady=15)
 answer()
 
 # User Interface

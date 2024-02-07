@@ -2,7 +2,7 @@ import random
 from tkinter import *
 
 num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-operations = ["+", "-", "*", "/"]
+operations = ["+", "-", "*"]
 # Main Function
 # Function for the answer ; var1 is the solving Entry (solving = Entry(app))
 def answer(var1):
@@ -33,9 +33,7 @@ def try_again():
     question = Label(app, text=f"{num_1} {operation} {num_2}", font=("Courier", 14))
     question.place(relx=0.16, rely=0.14, relwidth=0.7, relheight=0.23)
 
-    if operation == "/": # Avoid 0 / 0
-        num_2 = random.choice([n for n in num if n != 0])
-    elif operation == "-": # Avoid negative answers
+    if operation == "-": # Avoid negative answers
         while num_1 - num_2 < 0:
             num_1 = random.choice(num)
             num_2 = random.choice(num)
@@ -51,8 +49,6 @@ def result():
         return try_again.num1 - try_again.num2
     elif try_again.operation == "*":
         return try_again.num1 * try_again.num2
-    elif try_again.operation == "/":
-        return try_again.num1 / try_again.num2
 
 # User Interface
 app = Tk()

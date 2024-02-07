@@ -10,8 +10,17 @@ def answer(var1):
         correct = Label(app, text="Correct!", fg="green", font=("Courier", 16))
         correct.place(relx=0.3, rely=0.2)
     else:
-        wrong = Label(app, text="Wrong!", fg="red", font=("Courier", 16))
+        wrong = Label(app, text="Try Again", fg="red", font=("Courier", 16))
         wrong.place(relx=0.3, rely=0.2)
+        app.after(1000, clear_and_reset)
+
+def clear_and_reset():        
+        solving.delete(0, "end")
+        num_1 = try_again.num1
+        num_2 = try_again.num2
+        operation = try_again.operation
+        question = Label(app, text=f"{num_1} {operation} {num_2}", font=("Courier", 14))
+        question.place(relx=0.16, rely=0.14, relwidth=0.7, relheight=0.23)
 # Function to try again
 def try_again():
     # Clear the previous response

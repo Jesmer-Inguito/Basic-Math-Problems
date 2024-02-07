@@ -1,7 +1,7 @@
 import random
 from tkinter import *
 
-num = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 # Main Function
 # Function for the answer ; var1 is the solving Entry (solving = Entry(app))
 def answer(var1):
@@ -17,7 +17,7 @@ def try_again():
     try_again.num2update = random.choice(num)
     question = Label(app, text=f"{try_again.num1update}+{try_again.num2update}", font=("Courier", 14))
     question.place(relx=0.16, rely=0.14, relwidth=0.7, relheight=0.23)
-# Another function to try again
+# (addition)
 def resultPLUS():
     try_again
 

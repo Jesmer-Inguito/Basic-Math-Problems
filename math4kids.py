@@ -2,6 +2,7 @@ import random
 from tkinter import *
 
 num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+operations = ["+", "-", "*", "/"]
 # Main Function
 # Function for the answer ; var1 is the solving Entry (solving = Entry(app))
 def answer(var1):
@@ -13,10 +14,16 @@ def answer(var1):
         wrong.place(relx=0.3, rely=0.2)
 # Function to try again
 def try_again():
-    try_again.num1update = random.choice(num)
-    try_again.num2update = random.choice(num)
-    question = Label(app, text=f"{try_again.num1update}+{try_again.num2update}", font=("Courier", 14))
+    num_1 = random.choice(num)
+    num_2 = random.choice(num)
+    operation = random.choice(operations)
+
+    question = Label(app, text=f"{num_1} {operation} {num_2}", font=("Courier", 14))
     question.place(relx=0.16, rely=0.14, relwidth=0.7, relheight=0.23)
+
+    try_again.num1 = num_1
+    try_again.num2 = num_2
+    try_again.operation = operation
 # (addition)
 def resultPLUS():
     try_again

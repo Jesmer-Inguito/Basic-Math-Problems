@@ -14,6 +14,14 @@ def answer(var1):
         wrong.place(relx=0.3, rely=0.2)
 # Function to try again
 def try_again():
+    # Clear the previous response
+    for widget in app.winfo_children():
+        if isinstance(widget, Label):
+            widget.destroy
+    
+    # Clear the entry widget
+    solving.delete(0, "end")
+
     num_1 = random.choice(num)
     num_2 = random.choice(num)
     operation = random.choice(operations)

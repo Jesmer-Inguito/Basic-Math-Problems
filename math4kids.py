@@ -6,7 +6,7 @@ operations = ["+", "-", "*", "/"]
 # Main Function
 # Function for the answer ; var1 is the solving Entry (solving = Entry(app))
 def answer(var1):
-    if var1.get() == str(resultPLUS()):
+    if var1.get() == str(result()):
         correct = Label(app, text="Correct!", fg="green", font=("Courier", 16))
         correct.place(relx=0.3, rely=0.2)
     else:
@@ -32,10 +32,15 @@ def try_again():
     try_again.num2 = num_2
     try_again.operation = operation
 # (addition)
-def resultPLUS():
-    try_again
-
-    return try_again.num1update + try_again.num2update
+def result():
+    if try_again.operation == "+":
+        return try_again.num1 + try_again.num2
+    elif try_again.operation == "-":
+        return try_again.num1 - try_again.num2
+    elif try_again.operation == "*":
+        return try_again.num1 * try_again.num2
+    elif try_again.operation == "/":
+        return try_again.num1 / try_again.num2
 
 # User Interface
 app = Tk()

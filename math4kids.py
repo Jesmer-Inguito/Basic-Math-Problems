@@ -26,6 +26,10 @@ def try_again():
     num_2 = random.choice(num)
     operation = random.choice(operations)
 
+    if operation == "-": # Bigger number - smaller number
+        num_1, num_2 = max(num_1, num_2), min(num_1, num_2)
+
+
     question = Label(app, text=f"{num_1} {operation} {num_2}", font=("Courier", 14))
     question.place(relx=0.16, rely=0.14, relwidth=0.7, relheight=0.23)
 
